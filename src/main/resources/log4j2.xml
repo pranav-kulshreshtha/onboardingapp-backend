@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{HH:mm:ss.SSS} [%t] %c{1} - %msg%n 
+                    <!--[LogLevel] Time [Thread] LoggerName Message NewLine-->
+                </pattern>
+            </PatternLayout>
+        </Console>
+        <File name="MyFile" fileName="app.log">
+        	<PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    	</File>          
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="ConsoleAppender" level="all"/>
+            <AppenderRef ref="MyFile" level="all"/>
+        </Root>
+    </Loggers>
+</Configuration>
